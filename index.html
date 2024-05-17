@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="cutscene.css">
+    <link rel="stylesheet" href="cpr.css">
+    <title>CPR Game - By Ayden</title>
+</head>
+
+<body>
+    <div id="dialogueContainer">
+        <div id="dialogue">
+
+        </div>
+    </div>
+    <div>
+        <div id="webHeader">
+            <span id="headerText">My super cool CPR game</span><br>
+            <span>By Ayden</span>
+        </div>
+    </div>
+    <span id="texturesLoaded" style="position: absolute; top: 10px; right: 10px;"></span>
+    <div id="failedScreen">
+        <div>
+            <span>You failed :(</span>
+            <button onclick="location.reload()">RESTART</button>
+        </div>
+    </div>
+    <div id="game">
+        <div id="playbutton" onclick="startGame()">
+            <span>PLAY</span>
+        </div>
+        <div id="cutscene1" style="display: none;">
+            <img id="cutsceneImg">
+        </div>
+        <div id="gameCPR" style="display: none;">
+            <span id="goodness" style="font-size: 1.25em; font-weight: 700;">-</span>
+            <span id="BPMCounter">0 BPM</span>
+            <div id="rhythmButton">
+                <span>BEAT</span>
+            </div>
+
+            <div id="healthBarContainer">
+                <span style="filter: drop-shadow(0px 0px 5px black);">HEALTH</span>
+                <div id="healthBar">
+                    <div id="innerHealthBar"></div>
+                </div>
+                <span id="paramedicDisplay" style="opacity: 0;margin-top: 10px;  filter: drop-shadow(0px 0px 5px black);">PARAMEDICS ARRIVE IN 0:45</span>
+            </div>
+
+            <div id="areyouok">
+                <span>ARE YOU <br>OK!?!?!?</span><br><br>
+            </div>
+
+            <div id="timingContainer">
+                <div id="timingBar">
+
+                </div>
+            </div>
+
+        </div>
+        <div id="fakeAmbulanceContainer">
+            <img src="media/ambulance.gif" id="fakeAmbulance">
+        </div>
+
+        <div id="results">
+        </div>
+        <button id="retryButton">RETRY</button>
+    </div>
+
+    <script src="DeBread.js"></script>
+    <script src="script.js"></script>
+    <script src="cutscene.js"></script>
+    <script src="cpr.js"></script>
+</body>
+
+</html>

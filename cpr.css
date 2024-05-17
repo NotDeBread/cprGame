@@ -1,0 +1,220 @@
+#rhythmButton {
+  position: relative;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-size: 2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: scale var(--bouncy) 0.25s;
+  filter: drop-shadow(0px 0px 5px black);
+}
+
+#rhythmButton:hover {
+  scale: 105%;
+}
+
+#rhythmButton:active {
+  scale: 95%;
+}
+
+.rhythmButtonEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  /* outline: 5px solid white; */
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 10px white;
+  transition: transform var(--bouncy) 0.25s;
+  animation: rhythmButtonEffect 750ms ease-out 1 forwards;
+}
+
+#rhythmButton:hover .rhythmButtonEffect {
+  transform: scale(95%);
+}
+
+#rhythmButton:active .rhythmButtonEffect {
+  transform: scale(105%);
+}
+
+@keyframes rhythmButtonEffect {
+  to {
+    scale: 250%;
+    opacity: 0;
+  }
+}
+
+
+#healthBarContainer {
+  position: absolute;
+  top: 100px;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 1.25em;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#healthBar {
+  width: 500px;
+  height: 25px;
+  background-color: black;
+  box-shadow: 0px 0px 0px 2px black, 0px 0px 0px 4px white;
+  /* filter: drop-shadow(0px 0px 5px black); */
+}
+
+#innerHealthBar {
+  width: 50%;
+  height: 100%;
+  background-color: lime;
+}
+
+@keyframes paramedicAnim {
+  from {
+    scale: 150%;
+  }
+}
+
+#areyouok {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: url(media/areyouokbg.png);
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: 900;
+  color: white;
+  filter: drop-shadow(0px 0px 5px black);
+}
+
+#fakeAmbulanceContainer {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#fakeAmbulance {
+  position: absolute;
+  width: 300px;
+  left: 0;
+  bottom: 0;
+  /* animation: fakeAmbulanceAnim 3s linear 1 forwards, 
+  fakeAmbulanceJumpIn 500ms ease-out 1s 1 forwards, 
+  fakeAmbulanceJumpOut 500ms ease-in 1.5s 1 forwards;
+  animation: fakeAmbulanceJump 1s ease-out 2s 1 forwards; */
+}
+
+@keyframes fakeAmbulanceAnim {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100dvw;
+  }
+}
+
+@keyframes fakeAmbulanceJumpIn {
+  to {
+    transform: translateY(calc(-50dvh + 150px));
+  }
+}
+
+@keyframes fakeAmbulanceJumpOut {
+  to {
+    transform: translateY(0px);
+  }
+}
+
+#timingContainer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+#timingBar {
+  width: 250px;
+  height: 10px;
+  position: relative;
+  box-shadow: 0px 0px 0px 2px black, 0px 0px 0px 4px white;
+  overflow: hidden;
+  background: linear-gradient(90deg, 
+  rgb(100, 0, 0), 
+  rgb(100, 60, 0), 
+  rgb(0, 100, 0), 
+  rgb(0, 100, 100), 
+  rgb(0, 100, 0), 
+  rgb(100, 60, 0), 
+  rgb(100, 0, 0));
+}
+
+.timing {
+  height: 100%;
+  width: 5px;
+  background-color: white;
+  animation: timing 3s ease-in 1 forwards;
+  position: absolute;
+}
+
+@keyframes timing {
+  to {
+    transform: scale(50%);
+    opacity: 0;
+  }
+}
+
+#results {
+  position: absolute;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background-image: url(media/yourdidit.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity ease-in-out 1s;
+}
+
+#retryButton {
+  background-color: white;
+  color: black;
+  outline: 2px solid white;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  bottom: 25px;
+  left: 100px;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+}

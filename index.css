@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --bouncy: cubic-bezier(0,2,.75,1);
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+#webHeader {
+  width: calc(100dvw - 100px);
+  padding: 50px;
+  line-height: 1;
+  background-color: rgb(30, 20, 50);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  transition: height ease-in-out 750ms, padding ease-in-out 750ms;
+}
+
+#headerText {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+
+
+
+#failedScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgb(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  z-index: 5;
+}
+
+#failedScreen div {
+  background-color: rgb(0, 0, 0, 0.5);
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+#failedScreen div span {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#failedScreen div button {
+  background-color: black;
+  outline: 2px solid white;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+#game {
+  user-select: none;
+  width: 100dvw;
+  height: calc(100dvh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 10, 20);
+  filter: brightness(100%);
+  transition: height ease-in-out 750ms, filter ease-in-out 1s;
+}
+
+#playbutton {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  /* animation: playButtonAnim 250ms ease-out 1 forwards; */
+}
+
+@keyframes playButtonAnim {
+  from {
+    scale: 110%;
+    background-color: rgb(100, 100, 100, 0.5);
+  }
+  to {
+    scale: 0%;
+    opacity: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+}
+
+#gameCPR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100dvw;
+  pointer-events: none;
+  overflow: hidden;
+  background-image: url(media/cprBG.png);
+  background-size: cover;
+  background-position: center;
+  /* animation: shrink 1s ease-in 1 forwards; */
+}
+
+@keyframes shrink {
+  to {
+    scale: 0;
+  }
+}
